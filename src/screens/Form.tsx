@@ -12,7 +12,7 @@ import {
   updateSectionsAbout,
 } from '../components/functions/sections'
 
-export default function () {
+export default function Form() {
   const [currentSection, setCurrentSection] = useState(0)
   const [lastSection, setLastSection] = useState(1)
   const [sections, setSections] = useState(initialSections)
@@ -20,7 +20,7 @@ export default function () {
     mode: 'onTouched',
   })
   const onSubmit = (data: any) => {
-    if (currentSection == lastSection) {
+    if (currentSection === lastSection) {
       // actually submit
       console.log(data)
     } else {
