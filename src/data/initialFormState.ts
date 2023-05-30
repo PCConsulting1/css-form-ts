@@ -15,11 +15,35 @@ export const initialStudent = {
   zip: '',
   currentAcademicYear: '',
   maritalStatus: '',
-  legalDependants: '',
-  emancipatedMinor: '',
-  homeless: '',
-  wardOfTheCourt: '',
-  fosterCare: '',
+  legalDependants: false,
+  veteran: false,
+  emancipatedMinor: false,
+  homeless: false,
+  wardOfTheCourt: false,
+  fosterCare: false,
+  // student will need to add all stepparents
+  guardians: [
+    {
+      firstName: '',
+      lastName: '',
+      relationship: '',
+      isDeceased: false,
+    },
+  ],
+  //! Only show if 3 or 4 parents are entered
+  livesWith: {
+    parent1: '',
+    parent2: '',
+  },
+  providing: {
+    parent1: '',
+    parent2: '',
+    maritalStatus: '',
+  },
+  //! ********************
+  //! Only show if 1 parent is entered
+  singleParentReason: '',
+  //! **********************
   applying: [
     {
       collegeName: '',
@@ -29,34 +53,185 @@ export const initialStudent = {
       transfer: false,
     },
   ],
-  taxesFiled: '',
-  taxReturnType: '',
-  taxFilingStatus: '',
-  adjustedGrossIncome: '0',
-  federalTaxesPaid: '0',
-  taxableInterest: '0',
-  ordinaryDividends: '0',
-  deductions: '0',
-  schedule3Filed: false,
-  educationCredits: '0',
-  incomeFromWork: '0',
-  taxableEarnings: '0',
-  untaxedSocialSecurity: '0',
-  otherUntaxedIncome: '0',
-  parentHelp: '0',
-  scholarshipHelp: '0',
-  employerHelp: '0',
-  relativesHelp: '0',
-  investments: '0',
-  trust: '0',
-  cash: '0',
-  retirement: '0',
-  expectedEarningsSummer: '0',
-  expectedOtherTaxedSummer: '0',
-  expectedOtherUntaxedSummer: '0',
-  expectedEarningsAcademicYear: '0',
-  expectedOtherTaxedAcademicYear: '0',
-  expectedOtherUntaxedAcademicYear: '0',
+  taxReturn: {
+    filed: false,
+    //! Do not show if no taxes filed
+    returnType: '',
+    filingStatus: '',
+    //! *********************
+    //! Do not show if tax form submitted
+    adjustedGrossIncome: '0',
+    federalTaxesPaid: '0',
+    taxableInterest: '0',
+    ordinaryDividends: '0',
+    deductions: '0',
+    //! ****************
+    schedule3Filed: false,
+    //! Do not show if no schedule 3 filed
+    educationCredits: '0',
+    //! **********************
+  },
+  income: {
+    fromWork: '0',
+    taxableEarnings: '0',
+    untaxedSocialSecurity: '0',
+    otherUntaxedIncome: '0',
+    parentHelp: '0',
+    scholarshipHelp: '0',
+    employerHelp: '0',
+    relativesHelp: '0',
+  },
+  assets: {
+    investments: '0',
+    trust: '0',
+    cash: '0',
+    retirement: '0',
+  },
+  expectedEarnings: {
+    summer: '0',
+    otherTaxedSummer: '0',
+    otherUntaxedSummer: '0',
+    academicYear: '0',
+    otherTaxedAcademicYear: '0',
+    otherUntaxedAcademicYear: '0',
+  },
+  // This will hold questions not specific to either parent
+  parents: {
+    taxReturn: {
+      filed: false,
+      //! Do not show if no taxes filed
+      taxReturnType: '',
+      taxFilingStatus: '',
+      //! *********************
+      //! Do not show if tax form submitted
+      adjustedGrossIncome: '0',
+      wagesSalaryTips: '0',
+      taxExemptInterest: '0',
+      taxableInterest: '0',
+      ordinaryDividends: '0',
+      IRA: {
+        distributions: '0',
+        rollover: '0',
+        taxableAmount: '0',
+      },
+      pensionsAndAnnuities: {
+        received: '0',
+        rollover: '0',
+        taxableAmount: '0',
+      },
+      socialSecurity: {
+        benefits: '0',
+        taxableAmount: '0',
+        capitalGain: '0',
+      },
+      adjustmentsToIncome: '0',
+      standardOrItemizedDeductions: '0',
+      qualifiedBusinessIncomeDeductions: '0',
+      federalTaxesPaid: '0',
+      //! ********************
+    },
+    schedule1: {
+      filed: false,
+      //! Do not show if schedule 1 not filed
+      taxableRefundsCredits: '0',
+      alimony: '0',
+      businessIncome: '0',
+      otherGains: '0',
+      RealEstateRoyalties: '0',
+      farm: '0',
+      unemployment: '0',
+      foreignIncome: '0',
+      totalOtherIncome: '0',
+      otherIncomeSource: '',
+      healthSavingsAccount: '0',
+      selfEmployedSEP: '0',
+      alimonyPaid: '0',
+      IRADeduction: '0',
+      //! ********************
+    },
+    schedule2: {
+      filed: false,
+    },
+    schedule3: {
+      filed: false,
+      //! Do not show if schedule 3 not filed
+      educationCredits: '0',
+      //! ********************
+    },
+    contributions: {
+      retirementSavings: '0',
+      healthSavingsAccount: '0',
+      medicalFSA: '0',
+      dependantFSA: '0',
+    },
+    income: {
+      socialSecurity: '0',
+      alimony: '0',
+      fromOthersInHouse: '0',
+      allowance: '0',
+      gifts: '0',
+      otherUntaxed: '0',
+      currentYearTaxed: '0',
+      currentYearUntaxed: '0',
+      expectedFutureChange: false,
+      childSupport: '0',
+    },
+    expenses: {
+      childSupport: '0',
+      medical: false,
+      medicalCost: '0',
+      priorCollege: '0',
+      currentCollege: '0',
+    },
+    benefits: {
+      snap: '0',
+      freeLunch: '0',
+      wic: '0',
+      ssi: '0',
+      tanf: '0',
+      medicaid: '0',
+    },
+    housing: {
+      sameAddress: false,
+      //! Do not show if same address
+      streetAddress: '',
+      streetAddress2: '',
+      city: '',
+      state: '',
+      zip: '',
+      //! ********************
+      homeOwnership: '',
+      yearPurchased: '',
+      purchasePrice: '',
+      currentMarketValue: '',
+      amountOwed: '',
+      primaryMortgage: '',
+      monthlyPayment: '',
+    },
+    dependants: [
+      {
+        firstName: '',
+        lastName: '',
+        birthDate: '',
+        relationship: '',
+        nextSchoolLevel: '',
+        priorEducation: {
+          schoolLevel: '',
+          schoolName: '',
+          totalCost: '',
+          scholarships: '',
+          paidByParents: '',
+        },
+        currentEducation: {
+          schoolName: '',
+          totalCost: '',
+          paidByParents: '',
+          isFullTime: false,
+          typeOfCollege: '',
+        },
+      },
+    ],
+  },
 }
 
 export const initialParent = {}

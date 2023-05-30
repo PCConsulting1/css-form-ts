@@ -1,0 +1,28 @@
+export const initialS = {}
+export const initialParent = {
+  firstName: '',
+  lastName: '',
+  socialSecurity: '',
+  email: '',
+  birthDate: '',
+  highestEducation: '',
+  incomeFromWork: '',
+  expectedIncomeFromWork: '',
+  employmentStatus: '',
+  veteran: false,
+  dislocatedWorker: false,
+  occupation: '',
+  companyName: '',
+  companyLocation: '',
+  yearsAtCompany: '',
+  retirementPlans: {
+    taxDeferred: false,
+    socialSecurity: false,
+    employerSponsored: false,
+    civilService: false,
+    unionSponsored: false,
+    militarySponsored: false,
+    other: false,
+    value: '0',
+  },
+}
