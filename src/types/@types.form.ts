@@ -1,3 +1,10 @@
+export interface College {
+  collegeName: string
+  incomingGrade: string
+  housingStatus: string
+  appliedBefore: boolean
+  transfer: boolean
+}
 export interface FormModel {
   student: {
     firstName: string
@@ -21,15 +28,7 @@ export interface FormModel {
     homeless: string
     wardOfTheCourt: string
     fosterCare: string
-    applying: [
-      {
-        collegeName: string
-        incomingGrade: string
-        housingStatus: string
-        appliedBefore: boolean
-        transfer: boolean
-      }
-    ]
+    applying: [College]
     taxesFiled: string
     taxReturnType: string
     taxFilingStatus: string
@@ -59,10 +58,4 @@ export interface FormModel {
     expectedOtherTaxedAcademicYear: string
     expectedOtherUntaxedAcademicYear: string
   }
-}
-
-export type FormContextType = {
-  form: FormModel
-  saveForm: (form: FormModel) => void
-  updateForm: (form: FormModel) => void
 }
