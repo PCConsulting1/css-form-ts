@@ -1,4 +1,4 @@
-export const initialStudent = {
+export const student = {
   firstName: '',
   middleName: '',
   lastName: '',
@@ -134,7 +134,7 @@ export const initialStudent = {
       filed: false,
       //! Do not show if schedule 1 not filed
       taxableRefundsCredits: '0',
-      alimony: '0',
+      alimonyReceived: '0',
       businessIncome: '0',
       otherGains: '0',
       RealEstateRoyalties: '0',
@@ -176,10 +176,14 @@ export const initialStudent = {
       expectedFutureChange: false,
       childSupport: '0',
     },
+    assets: {
+      liquidCash: '0',
+      heldForChildren: '0',
+      investmentValue: '0',
+    },
     expenses: {
       childSupport: '0',
-      medical: false,
-      medicalCost: '0',
+      medical: '0',
       priorCollege: '0',
       currentCollege: '0',
     },
@@ -231,7 +235,46 @@ export const initialStudent = {
         },
       },
     ],
+    specialCicrumstances: {
+      changeInEmployment: false,
+      covid: false,
+      exceptionalMedical: false,
+      eldercare: false,
+      nonrecurringIncome: false,
+      other: false,
+    },
   },
 }
 
-export const initialParent = {}
+export const parent = {
+  firstName: '',
+  lastName: '',
+  socialSecurity: '',
+  email: '',
+  birthDate: '',
+  highestEducation: '',
+  incomeFromWork: '',
+  expectedIncomeFromWork: '',
+  employmentStatus: '',
+  veteran: false,
+  dislocatedWorker: false,
+  occupation: '',
+  companyName: '',
+  companyLocation: '',
+  yearsAtCompany: '',
+  retirementPlans: {
+    taxDeferred: false,
+    socialSecurity: false,
+    employerSponsored: false,
+    civilService: false,
+    unionSponsored: false,
+    militarySponsored: false,
+    other: false,
+    value: '0',
+  },
+}
+
+export const divorcedParent = {
+  ...parent,
+  ...student.parents,
+}
