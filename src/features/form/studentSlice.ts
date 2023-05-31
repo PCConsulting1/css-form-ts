@@ -1,10 +1,10 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
 
-import { initialStudent } from '../../data/initialFormState'
+import { student } from '../../data/initialFormState'
 
 const formSlice = createSlice({
   name: 'form',
-  initialState: initialStudent,
+  initialState: student,
   reducers: {
     'student/addSchool': (state) => {
       const newSchool = {
