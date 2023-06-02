@@ -52,7 +52,7 @@ export const student = {
     },
   ],
   tax_return: {
-    is_filed: false,
+    is_1040_filed: false,
     //! Do not show if no taxes filed
     return_type: '',
     filing_status: '',
@@ -124,7 +124,7 @@ export const parent = {
 // This will hold questions not specific to either parent
 export const household = {
   tax_return: {
-    is_filed: false,
+    is_1040_filed: false,
     //! Do not show if no taxes filed
     tax_return_type: '',
     tax_filing_status: '',
@@ -157,7 +157,7 @@ export const household = {
     //! ********************
   },
   schedule1: {
-    is_filed: false,
+    is_schedule_1_filed: false,
     //! Do not show if schedule 1 not filed
     taxable_refunds_credits: 0,
     alimony_received: 0,
@@ -176,10 +176,10 @@ export const household = {
     //! ********************
   },
   schedule_2: {
-    is_filed: false,
+    is_schedule_2_filed: false,
   },
   schedule_3: {
-    is_filed: false,
+    is_schedule_3_filed: false,
     //! Do not show if schedule 3 not filed
     education_credits: 0,
     //! ********************
