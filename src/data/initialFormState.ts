@@ -18,7 +18,7 @@ export const student = {
   has_legal_dependants: false,
   is_veteran: false,
   was_emancipated_minor: false,
-  was_homeless: false,
+  is_homeless: false,
   was_ward_of_the_court: false,
   was_foster_care: false,
   // student will need to add all stepparents
@@ -28,7 +28,7 @@ export const student = {
     {
       first_name: '',
       last_name: '',
-      relationship: '',
+      guardian_relationship: '',
       is_deceased: false,
       info_provided: false,
     },
@@ -54,7 +54,7 @@ export const student = {
   tax_return: {
     is_1040_filed: false,
     //! Do not show if no taxes filed
-    return_type: '',
+    tax_return_type: '',
     filing_status: '',
     //! *********************
     //! Do not show if tax form submitted

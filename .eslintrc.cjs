@@ -23,6 +23,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'warn',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'prettier/prettier': [
       'error',
       {
