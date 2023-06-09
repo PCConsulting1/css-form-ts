@@ -6,7 +6,7 @@ export const student = {
   email: '',
   birth_date: '',
   citizenship: '',
-  social_security: '',
+  social_security_id: '',
   cb_fin_aid_id: '',
   street_address: '',
   street_address_2: '',
@@ -73,7 +73,7 @@ export const student = {
     from_work: 0,
     taxable_earnings: 0,
     untaxed_social_security: 0,
-    other_untaxed_income: 0,
+    untaxed_income_other: 0,
     parent_help: 0,
     scholarship_help: 0,
     employer_help: 0,
@@ -98,7 +98,7 @@ export const student = {
 export const parent = {
   first_name: '',
   last_name: '',
-  social_security: '',
+  social_security_id: '',
   email: '',
   birth_date: '',
   highest_education: '',
@@ -119,6 +119,23 @@ export const parent = {
   has_military_sponsored_retirement: false,
   has_other_retirement: false,
   retirement_value: 0,
+  housing: {
+    is_same_address: false,
+    //! Do not show if same address
+    street_address: '',
+    street_address_2: '',
+    city: '',
+    state: '',
+    zip: '',
+    //! ********************
+    home_ownership: '',
+    home_purchase_year: '',
+    home_purchase_price: '',
+    home_current_market_value: '',
+    home_amount_owed: '',
+    home_primary_mortgage: '',
+    home_monthly_payment: '',
+  },
 }
 
 // This will hold questions not specific to either parent
@@ -136,20 +153,20 @@ export const household = {
     taxable_interest: 0,
     ordinary_dividends: 0,
     ira: {
-      distributions: 0,
+      ira_distributions: 0,
       rollover: 0,
-      taxable_amount: 0,
+      ira_taxable_amount: 0,
     },
-    pensions_and_annuities: {
-      received: 0,
+    retirement_funds: {
+      pensions_and_annuities: 0,
       rollover: 0,
-      taxable_amount: 0,
+      pensions_and_annuities_taxable_amount: 0,
     },
     social_security: {
       benefits: 0,
-      taxable_amount: 0,
-      capital_gain: 0,
+      social_security_taxable_amount: 0,
     },
+    capital_gain: 0,
     adjustments_to_income: 0,
     standard_deductions: 0,
     business_income_deductions: 0,
@@ -170,7 +187,7 @@ export const household = {
     total_other_income: 0,
     other_income_source: '',
     health_savings_account: 0,
-    self_employed_spe: 0,
+    self_employed_sep: 0,
     alimony_paid: 0,
     ira_deduction: 0,
     //! ********************
@@ -184,66 +201,53 @@ export const household = {
     education_credits: 0,
     //! ********************
   },
-  contributions: {
-    retirement_savings: 0,
-    health_savings_account: 0,
-    medical_fsa: 0,
-    dependant_fsa: 0,
+
+  retirement_savings: 0,
+  health_savings_account: 0,
+  medical_fsa: 0,
+  dependant_fsa: 0,
+
+  income_social_security: 0,
+  income_alimony_untaxed: 0,
+  income_from_others_in_house: 0,
+  income_allowance: 0,
+  income_gifts: 0,
+  income_other_untaxed: 0,
+  income_current_year_taxed: 0,
+  income_current_year_untaxed: 0,
+  income_expects_future_change: false,
+  income_child_support: 0,
+
+  liquid_cash: 0,
+  held_for_children: 0,
+  investment_value: 0,
+
+  expense_prior_prior: {
+    expense_child_support: 0,
+    expense_medical: 0,
+    expense_college: 0,
+    expense_alimony: 0,
   },
-  income: {
-    social_security: 0,
-    alimony: 0,
-    from_others_in_house: 0,
-    allowance: 0,
-    gifts: 0,
-    other_untaxed: 0,
-    current_year_taxed: 0,
-    current_year_untaxed: 0,
-    expects_future_change: false,
-    child_support: 0,
+  expense_prior: {
+    expense_child_support: 0,
+    expense_medical: 0,
+    expense_college: 0,
+    expense_alimony: 0,
   },
-  assets: {
-    liquid_cash: 0,
-    held_for_children: 0,
-    investment_value: 0,
-  },
-  expenses: {
-    child_support: 0,
-    medical: 0,
-    prior_college: 0,
-    current_college: 0,
-  },
-  benefits: {
-    snap: 0,
-    free_lunch: 0,
-    wic: 0,
-    ssi: 0,
-    tanf: 0,
-    medicaid: 0,
-  },
-  housing: {
-    is_same_address: false,
-    //! Do not show if same address
-    street_address: '',
-    street_address_2: '',
-    city: '',
-    state: '',
-    zip: '',
-    //! ********************
-    home_ownership: '',
-    year_purchased: '',
-    purchase_price: '',
-    current_market_value: '',
-    amount_owed: '',
-    primary_mortgage: '',
-    monthly_payment: '',
-  },
+
+  snap: 0,
+  free_lunch: 0,
+  wic: 0,
+  ssi: 0,
+  tanf: 0,
+  medicaid: 0,
+
   dependants: [
     {
       first_name: '',
       last_name: '',
       birth_date: '',
-      relationship: '',
+      dependant_relationship: '',
       next_school_level: '',
       prior_education: {
         school_level: '',
@@ -261,12 +265,12 @@ export const household = {
       },
     },
   ],
-  special_cicrumstances: {
-    has_change_in_employment: false,
-    has_covid: false,
-    has_exceptional_medical: false,
-    has_eldercare: false,
-    has_nonrecurring_income: false,
-    has_other: false,
-  },
+
+  has_change_in_employment: false,
+  has_covid: false,
+  has_exceptional_medical: false,
+  has_eldercare: false,
+  has_nonrecurring_income: false,
+  has_other_circumstance: false,
+  explanation: '',
 }
