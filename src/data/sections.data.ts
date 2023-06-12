@@ -1,9 +1,16 @@
 import q from './questions.data'
 
-const sections = [
+const sections = {
+  student: [
     {
       about: 'Student',
-      questions: [q.firstName, q.middleName, q.lastName, q.birthDate],
+      questions: [
+        q.firstName,
+        q.middleName,
+        q.lastName,
+        q.birthDate,
+        q.currentAcademicYear,
+      ],
     },
     {
       about: 'Student',
@@ -43,8 +50,18 @@ const sections = [
       about: 'Parents',
       questions: [q.singleParentReason],
     },
+    {
+      about: 'Student',
+      questions: [
+        q.collegeName,
+        q.incomingGrade,
+        q.housingStatus,
+        q.isTransfer,
+      ],
+    },
+  ],
   parent: [],
   household: [],
-]
+}
 
 export default sections

@@ -191,7 +191,14 @@ export const questions = {
   },
   collegeName: {
     name: 'college_name',
-    question: () => `Enter the name of the college`,
+    question: () =>
+      `Enter the full name of the college (Ex. University of California - Irvine)`,
+  },
+  // should come from a dropdown menu
+  collegeCode: {
+    name: 'college_code',
+    question: () =>
+      `Enter the CSS Profile code of the college you wish to send your CSS Profile to`,
   },
   incomingGrade: {
     name: 'incoming_grade',

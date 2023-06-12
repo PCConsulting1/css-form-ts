@@ -44,7 +44,7 @@ export const student = {
   //! **********************
   applying: [
     {
-      college_name: '',
+      college_code: '',
       incoming_grade: '',
       housing_status: '',
       has_applied_before: false,
