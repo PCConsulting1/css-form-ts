@@ -8,11 +8,13 @@ export const student = {
   citizenship: '',
   social_security_id: '',
   cb_fin_aid_id: '',
+  //! Do not show if same address
   street_address: '',
   street_address_2: '',
   city: '',
   state: '',
   zip: '',
+  //! ********************
   current_academic_year: '',
   marital_status: '',
   has_legal_dependants: false,
@@ -51,51 +53,49 @@ export const student = {
       is_transfer: false,
     },
   ],
-  tax_return: {
-    is_1040_filed: false,
-    //! Do not show if no taxes filed
-    tax_return_type: '',
-    filing_status: '',
-    //! *********************
-    //! Do not show if tax form submitted
-    adjusted_gross_income: 0,
-    federal_taxes_paid: 0,
-    taxable_interest: 0,
-    ordinary_dividends: 0,
-    deductions: 0,
-    //! ****************
-    is_schedule_3_filed: false,
-    //! Do not show if no schedule 3 filed
-    education_credits: 0,
-    //! **********************
-  },
-  income: {
-    from_work: 0,
-    taxable_earnings: 0,
-    untaxed_social_security: 0,
-    untaxed_income_other: 0,
-    parent_help: 0,
-    scholarship_help: 0,
-    employer_help: 0,
-    relatives_help: 0,
-  },
-  assets: {
-    investments: 0,
-    trust: 0,
-    cash: 0,
-    retirement: 0,
-  },
-  expected_earnings: {
-    summer: 0,
-    other_taxed_summer: 0,
-    other_untaxed_summer: 0,
-    academic_year: 0,
-    other_taxed_academic_year: 0,
-    other_untaxed_academic_year: 0,
-  },
+
+  is_1040_filed: false,
+  //! Do not show if no taxes filed
+  tax_return_type: '',
+  filing_status: '',
+  //! *********************
+  //! Do not show if tax form submitted
+  adjusted_gross_income: 0,
+  federal_taxes_paid: 0,
+  taxable_interest: 0,
+  ordinary_dividends: 0,
+  deductions: 0,
+  //! ****************
+  is_schedule_3_filed: false,
+  //! Do not show if no schedule 3 filed
+  education_credits: 0,
+  //! **********************
+
+  income_from_work: 0,
+  taxable_earnings: 0,
+  untaxed_social_security: 0,
+  untaxed_income_other: 0,
+  // might need to be a field for each parent
+  parent_help: 0,
+  scholarship_help: 0,
+  employer_help: 0,
+  relatives_help: 0,
+  // assets
+  investments: 0,
+  trust: 0,
+  cash: 0,
+  retirement: 0,
+  // expected income
+  summer: 0,
+  other_taxed_summer: 0,
+  other_untaxed_summer: 0,
+  academic_year: 0,
+  other_taxed_academic_year: 0,
+  other_untaxed_academic_year: 0,
 }
 
 export const parent = {
+  // contribution towards educational expenses
   first_name: '',
   last_name: '',
   social_security_id: '',
@@ -112,30 +112,27 @@ export const parent = {
   company_location: '',
   years_at_company: 0,
   has_tax_deferred_retirement: false,
-  has_social_security_retirement: false,
   has_employer_sponsored_retirement: false,
   has_civil_service_retirement: false,
   has_union_sponsored_retirement: false,
   has_military_sponsored_retirement: false,
   has_other_retirement: false,
   retirement_value: 0,
-  housing: {
-    is_same_address: false,
-    //! Do not show if same address
-    street_address: '',
-    street_address_2: '',
-    city: '',
-    state: '',
-    zip: '',
-    //! ********************
-    home_ownership: '',
-    home_purchase_year: '',
-    home_purchase_price: '',
-    home_current_market_value: '',
-    home_amount_owed: '',
-    home_primary_mortgage: '',
-    home_monthly_payment: '',
-  },
+  is_same_address: false,
+
+  street_address: '',
+  street_address_2: '',
+  city: '',
+  state: '',
+  zip: '',
+
+  home_ownership: '',
+  home_purchase_year: '',
+  home_purchase_price: '',
+  home_current_market_value: '',
+  home_amount_owed: '',
+  home_primary_mortgage: '',
+  home_monthly_payment: '',
 }
 
 // This will hold questions not specific to either parent
@@ -194,6 +191,8 @@ export const household = {
   },
   schedule_2: {
     is_schedule_2_filed: false,
+    tax_credit_repayment: 0,
+    medicare_tax: 0,
   },
   schedule_3: {
     is_schedule_3_filed: false,
@@ -242,7 +241,7 @@ export const household = {
   tanf: 0,
   medicaid: 0,
 
-  dependants: [
+  dependents: [
     {
       first_name: '',
       last_name: '',

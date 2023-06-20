@@ -10,6 +10,7 @@ const sections = {
         q.lastName,
         q.birthDate,
         q.currentAcademicYear,
+        q.collegeName,
       ],
     },
     {
@@ -53,15 +54,99 @@ const sections = {
     {
       about: 'Student',
       questions: [
-        q.collegeName,
+        q.collegeCode,
         q.incomingGrade,
         q.housingStatus,
+        q.appliedBefore,
         q.isTransfer,
       ],
     },
   ],
-  parent: [],
-  household: [],
+  parent: [
+    {
+      about: 'Parents',
+      questions: [
+        q.birthDate,
+        q.socialSecurityId,
+        q.email,
+        q.parentHighestEducation,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [],
+    },
+  ],
+  household: [
+    {
+      about: 'Parents',
+      questions: [
+        q.taxesFiled,
+        q.taxReturnType,
+        q.filingStatus,
+        q.isSchedule1Filed,
+        q.isSchedule2Filed,
+        q.isSchedule3Filed,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [
+        q.taxReturnLine1,
+        q.taxReturnLine2a,
+        q.taxReturnLine2b,
+        q.taxReturnLine3b,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [q.taxReturnLine4a, q.rollover, q.taxReturnLine4b],
+    },
+    {
+      about: 'Parents',
+      questions: [q.taxReturnLine5a, q.rollover, q.taxReturnLine5b],
+    },
+    {
+      about: 'Parents',
+      questions: [
+        q.taxReturnLine6a,
+        q.taxReturnLine6b,
+        q.taxReturnLine7,
+        q.taxReturnLine10,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [
+        q.taxReturnLine11,
+        q.taxReturnLine12c,
+        q.taxReturnLine13,
+        q.taxReturnLine22,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [
+        q.schedule1Line1,
+        q.schedule1Line2a,
+        q.schedule1Line3,
+        q.schedule1Line4,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [
+        q.schedule1Line5,
+        q.schedule1Line6,
+        q.schedule1Line7,
+        q.schedule1Line8d,
+      ],
+    },
+    {
+      about: 'Parents',
+      questions: [q.schedule1Line9],
+    },
+  ],
 }
 
 export default sections

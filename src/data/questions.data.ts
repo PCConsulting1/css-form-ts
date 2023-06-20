@@ -1,3 +1,4 @@
+import schoolsList from './schoolList'
 // !name field must match object field
 /**
  * subject options:
@@ -18,6 +19,7 @@ interface Iquestion {
   year: number
 }
 export const questions = {
+  // TODO: question for written agreement for education expenses
   firstName: {
     name: 'first_name',
     question: ({ subject }: Iquestion) => `${subject}'s first name`,
@@ -137,12 +139,52 @@ export const questions = {
       } academic year?`,
     options: [
       'High School',
-      'First year undergraduate',
-      'Second year undergraduate',
-      'Third year undergraduate',
-      'Fourth year undergraduate',
+      '1st year undergraduate',
+      '2nd year undergraduate',
+      '3rd year undergraduate',
+      '4th year undergraduate',
       'Graduate/Doctoral',
     ],
+  },
+  schoolLevel: {
+    name: 'school_level',
+    question: ({ subject, year }: Iquestion) =>
+      `${subject}'s academic grade level for the ${year}-${
+        year + 1
+      } academic year?`,
+    options: [
+      'Kindergarten',
+      '1st grade',
+      '2nd grade',
+      '3rd grade',
+      '4th grade',
+      '5th grade',
+      '6th grade',
+      '7th grade',
+      '8th grade',
+      '9th grade',
+      '10th grade',
+      '11th grade',
+      '12th grade',
+      '1st year college',
+      '2nd year college',
+      '3rd year college',
+      '4th year college',
+      '5th year college',
+      '1st year grad/professional',
+      '2nd year grad/professional',
+      '3rd year grad/professional',
+      '4th year grad/professional',
+      'Other',
+      'None',
+    ],
+  },
+  isPrivateSchool: {
+    name: 'is_private_school',
+    question: ({ subject, year }: Iquestion) =>
+      `${subject} attends a private school for the ${year}-${
+        year + 1
+      } academic year`,
   },
   guardianRelationship: {
     name: 'guardian_relationship',
@@ -192,13 +234,14 @@ export const questions = {
   collegeName: {
     name: 'college_name',
     question: () =>
-      `Enter the full name of the college (Ex. University of California - Irvine)`,
+      `Enter the full name of the school (Ex. University of California - Irvine or Homewood-Flossmoor High School)`,
   },
   // should come from a dropdown menu
   collegeCode: {
     name: 'college_code',
     question: () =>
       `Enter the CSS Profile code of the college you wish to send your CSS Profile to`,
+    options: schoolsList,
   },
   incomingGrade: {
     name: 'incoming_grade',
@@ -241,23 +284,28 @@ export const questions = {
       'Middle school/junior high',
       'High school (9-12)',
       'College/university or beyond',
-      'Unknown',
+      'Other/Unknown',
     ],
   },
   taxesFiled: {
     name: 'is_1040_filed',
     question: ({ subject, year }: Iquestion) =>
       `Did ${subject} file a federal tax return for ${year}?`,
-    options: ['Already Completed', 'Planning to File', 'Not Going to File'],
+    options: [
+      'Completed tax return',
+      'Planning to file',
+      'Not filed and not required to file',
+    ],
   },
   taxReturnType: {
     name: 'tax_return_type',
     question: ({ subject, year }: Iquestion) =>
       `What type of tax return did ${subject} file for ${year}?`,
     options: [
-      'IRS Form 1040',
-      'A foreign tax return or IRS Form 1040-NR',
+      'U.S. tax return 1040',
+      'Canadian tax return',
       'A tax return with Puerto Rico, another U.S. territory, or Freely Associated State',
+      'Other non-U.S. tax return',
     ],
   },
   filingStatus: {
@@ -266,10 +314,10 @@ export const questions = {
       `What is ${subject}'s tax filing status for ${year}?`,
     options: [
       'Single',
-      'Married - Filing Jointly',
-      'Married - Filing Separately',
-      'Head of Household',
-      'Qualifying widow(er) With Dependent Child',
+      'Married - filing jointly',
+      'Married - filing separately',
+      'Head of household',
+      'Qualifying widow(er) with dependent child',
     ],
   },
 
@@ -438,6 +486,16 @@ export const questions = {
       `Did ${subject} file a 1040 Schedule 2 - Additional Taxes
       for ${year}?`,
   },
+  schedule2Line2: {
+    name: 'tax_credit_repayment',
+    question: ({ subject, year }: Iquestion) =>
+      `Schedule 2, Line 2: ${subject}'s excess advance premium tax credit repayment for ${year}`,
+  },
+  schedule2Line11: {
+    name: 'medicare_tax',
+    question: ({ subject, year }: Iquestion) =>
+      `Schedule 2, Line 11: ${subject}'s additional medicare tax for ${year}`,
+  },
   isSchedule3Filed: {
     name: 'is_schedule_3_filed',
     question: ({ subject, year }: Iquestion) =>
@@ -447,7 +505,7 @@ export const questions = {
   schedule3Line3: {
     name: 'education_credits',
     question: ({ subject, year }: Iquestion) =>
-      ` Schedule 3, line 3: ${subject}'s Education credits for ${year}`,
+      `Schedule 3, line 3: ${subject}'s Education credits for ${year}`,
   },
   incomeFromWork: {
     name: 'income_from_work',
