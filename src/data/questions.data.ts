@@ -70,9 +70,9 @@ export const questions = {
     ],
   },
   hasLegalDependants: {
-    name: 'has_legal_dependants',
+    name: 'has_legal_dependents',
     question: ({ subject }: Iquestion) =>
-      `Does ${subject} have legal dependants?`,
+      `Does ${subject} have legal dependents?`,
   },
   isVeteran: {
     name: 'is_veteran',
@@ -366,7 +366,7 @@ export const questions = {
       `Line 5b: ${subject}'s pensions and annuities, taxable amount for ${year}`,
   },
   taxReturnLine6a: {
-    name: 'benefits',
+    name: 'social_security_benefits',
     question: ({ subject, year }: Iquestion) =>
       `Line 6a: ${subject}'s social security benefits for ${year}`,
   },
@@ -527,10 +527,10 @@ export const questions = {
     question: ({ subject, year }: Iquestion) =>
       `How much did ${subject} contribute to a flexible spending account (FSA) for medical expenses in ${year}`,
   },
-  dependantFsa: {
-    name: 'dependant_fsa',
+  dependentFsa: {
+    name: 'dependent_fsa',
     question: ({ subject, year }: Iquestion) =>
-      `How much did ${subject} contribute to a flexible spending account (FSA) for dependant care expenses in ${year}`,
+      `How much did ${subject} contribute to a flexible spending account (FSA) for dependent care expenses in ${year}`,
   },
   incomeSocialSecurity: {
     name: 'income_social_security',
@@ -734,8 +734,8 @@ export const questions = {
     name: 'home_monthly_payment',
     question: () => `What is monthly housing payment?`,
   },
-  dependantRelationship: {
-    name: 'dependant_relationship',
+  dependentRelationship: {
+    name: 'dependent_relationship',
     question: ({ subject }: Iquestion) => `relationship to ${subject}`,
   },
   totalCost: {

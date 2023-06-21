@@ -17,7 +17,7 @@ export const student = {
   //! ********************
   current_academic_year: '',
   marital_status: '',
-  has_legal_dependants: false,
+  has_legal_dependents: false,
   is_veteran: false,
   was_emancipated_minor: false,
   is_homeless: false,
@@ -83,7 +83,7 @@ export const student = {
   // assets
   investments: 0,
   trust: 0,
-  cash: 0,
+  liquid_cash: 0,
   retirement: 0,
   // expected income
   summer: 0,
@@ -159,10 +159,10 @@ export const household = {
       rollover: 0,
       pensions_and_annuities_taxable_amount: 0,
     },
-    social_security: {
-      benefits: 0,
-      social_security_taxable_amount: 0,
-    },
+
+    social_security_benefits: 0,
+    social_security_taxable_amount: 0,
+
     capital_gain: 0,
     adjustments_to_income: 0,
     standard_deductions: 0,
@@ -204,7 +204,7 @@ export const household = {
   retirement_savings: 0,
   health_savings_account: 0,
   medical_fsa: 0,
-  dependant_fsa: 0,
+  dependent_fsa: 0,
 
   income_social_security: 0,
   income_alimony_untaxed: 0,
@@ -246,7 +246,7 @@ export const household = {
       first_name: '',
       last_name: '',
       birth_date: '',
-      dependant_relationship: '',
+      dependent_relationship: '',
       next_school_level: '',
       prior_education: {
         school_level: '',
