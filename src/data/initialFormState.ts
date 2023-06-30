@@ -133,6 +133,31 @@ export const parent = {
   home_amount_owed: '',
   home_primary_mortgage: '',
   home_monthly_payment: '',
+  businesses: [
+    {
+      business_name: '',
+      street_address: '',
+      city: '',
+      state: '',
+      business_type: '',
+      business_product: '',
+      business_ownership_percent: 0,
+      business_start: '',
+      is_business_100_employees: false,
+      business_value: 0,
+      business_owed: 0,
+      business_tax_form: '',
+      total_expenses: 0,
+      other_family_members: [
+        {
+          first_name: '',
+          last_name: '',
+          relationship: '',
+          salary: '',
+        },
+      ],
+    },
+  ],
 }
 
 // This will hold questions not specific to either parent

@@ -801,7 +801,7 @@ export const questions = {
   investmentValue: {
     name: 'investment_value',
     question: ({ subject }: Iquestion) =>
-      `Current market value of ${subject}'s investments?`,
+      `Current market value of ${subject}'s investments? (Do not include real-estate,farm,retirement plans)`,
   },
   taxableEarnings: {
     name: 'taxable_earnings',
@@ -916,5 +916,47 @@ export const questions = {
       `Provide a brief explanation of the circumstances you selected, including
       annual amounts paid for or additional costs`,
   },
+
+  // child support recieved for prior year (untaxed income and benefits)
+  // retirement contributions for prior year (untaxed income and benefits)
+  // untaxed distributions from pensions or retirement accounts (untaxed income and benefits)
+  // contributions to fsa and medical savings accounts (untaxed income and benefits)
+  // workers comp (untaxed income and benefits)
+
+  // how much child support paid in prior prior
+  // amount paid for student in prior prior year
+  // amount paid for student in prior year
+
+  // how much alimony was paid overall in prior prior year
+  // how much alimony paid to other parent in prior prior year
+  // how much alimony was paid in to other parent in prior year
+
+  // business array for each business owned
+  /**
+   * Name of the business
+   * business address (street,city,state)
+   * type of business (sole propiertorship, corporation, partnership)
+   * Primary product or service this business provides
+   * Name of parent owns the business
+   * Percent of ownership
+   * Date business started
+   * Does business employ more than 100 full-time employees
+   * current market value of business
+   * current amount owed on business (include parents portion of debt - mortgage and related debts for which business was used as collateral)
+   * Which tax form ins the income for the business reported (
+   * Form 1040 schedule c - profit or loss,
+   * Form 1040 schedule c - supplemental income or loss,
+   * Form 1065 - U.S. return of partnership,
+   * Form 1120 - U.S. corporation income tax return,
+   * Form 1120-s - U.S. income tax return for an S-Corporation)
+   * Gross revenue business had prior prior year (do not subtract any costs or expenses) - found in irs 1040 schedule c line 1, irs 1040 schedule e line 3 and 4, irs 1065 line 1a, irs 1120 line 1a, irs 1120-s line 1a
+   * Total expenses for business in prior prior year - found in Irs 1040 schedule c line 28, irs 1040 schedule e line 20,irs 1065 line 21, irs 1120 line 27, irs 1120-s line 20
+   * Do other family members receive a salary or wage from this business? (
+   * name,
+   * relationship,
+   * salary or wage)
+   * sources of untaxed income
+   *  */
 }
+
 export default questions
