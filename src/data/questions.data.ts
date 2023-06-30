@@ -7,6 +7,7 @@ import schoolsList from './schoolList'
  * - Parent1's Name,
  * - Parent2's Name,
  * - Parent1 and Parent2's Name together
+ * - Business Name,
  * - year calculated to be the start of the current academic year ex: 2023-2024 school year = 2023
  * - year options:
  * - start of the current academic year
@@ -737,6 +738,7 @@ export const questions = {
   dependentRelationship: {
     name: 'dependent_relationship',
     question: ({ subject }: Iquestion) => `relationship to ${subject}`,
+    options: ['sibling', 'grandparent'],
   },
   totalCost: {
     name: 'total_cost',

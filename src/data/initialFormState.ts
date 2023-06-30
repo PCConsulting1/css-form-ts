@@ -35,11 +35,9 @@ export const student = {
       info_provided: false,
     },
   ],
-  //! Only show if 3 or 4 guardians are entered
   /* if providing parents are not married,
    then they will need to submit separate forms */
   guardian_marital_status: '',
-  //! ********************
 
   //! Only show if 1 parent is entered
   single_parent_reason: '',
@@ -64,7 +62,7 @@ export const student = {
   federal_taxes_paid: 0,
   taxable_interest: 0,
   ordinary_dividends: 0,
-  deductions: 0,
+  standard_deductions: 0,
   //! ****************
   is_schedule_3_filed: false,
   //! Do not show if no schedule 3 filed
@@ -75,8 +73,6 @@ export const student = {
   taxable_earnings: 0,
   untaxed_social_security: 0,
   untaxed_income_other: 0,
-  // might need to be a field for each parent
-  parent_help: 0,
   scholarship_help: 0,
   employer_help: 0,
   relatives_help: 0,
@@ -102,8 +98,8 @@ export const parent = {
   email: '',
   birth_date: '',
   highest_education: '',
-  income_from_work: '',
-  expected_income_from_work: '',
+  income_from_work: 0,
+  expected_income_from_work: 0,
   employment_status: '',
   is_veteran: false,
   is_dislocated_worker: false,
@@ -118,21 +114,7 @@ export const parent = {
   has_military_sponsored_retirement: false,
   has_other_retirement: false,
   retirement_value: 0,
-  is_same_address: false,
 
-  street_address: '',
-  street_address_2: '',
-  city: '',
-  state: '',
-  zip: '',
-
-  home_ownership: '',
-  home_purchase_year: '',
-  home_purchase_price: '',
-  home_current_market_value: '',
-  home_amount_owed: '',
-  home_primary_mortgage: '',
-  home_monthly_payment: '',
   businesses: [
     {
       business_name: '',
@@ -141,11 +123,11 @@ export const parent = {
       state: '',
       business_type: '',
       business_product: '',
-      business_ownership_percent: 0,
-      business_start: '',
-      is_business_100_employees: false,
-      business_value: 0,
-      business_owed: 0,
+      business_ownership_percentage: 0,
+      business_year_started: '',
+      business_employes_100: false,
+      business_market_value: 0,
+      business_amount_owed: 0,
       business_tax_form: '',
       total_expenses: 0,
       other_family_members: [
@@ -162,6 +144,18 @@ export const parent = {
 
 // This will hold questions not specific to either parent
 export const household = {
+  home_ownership: '',
+  home_purchase_year: '',
+  home_purchase_price: '',
+  home_current_market_value: '',
+  home_amount_owed: '',
+  home_primary_mortgage: '',
+  home_monthly_payment: '',
+  street_address: '',
+  street_address_2: '',
+  city: '',
+  state: '',
+  zip: '',
   tax_return: {
     is_1040_filed: false,
     //! Do not show if no taxes filed
@@ -258,6 +252,7 @@ export const household = {
     expense_college: 0,
     expense_alimony: 0,
   },
+  parent_help: 0,
 
   snap: 0,
   free_lunch: 0,

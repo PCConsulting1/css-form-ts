@@ -1,0 +1,19 @@
+public record Tax1040(
+  Integer wagesSalariesTips,
+  Integer taxExemptInterest,
+  Integer taxableInterest,
+  Integer ordinaryDividends,
+  Integer distributions,
+  Integer iraRollover,
+  Integer iraTaxableAmount,
+  Integer pensionsAndAnnuities,
+  Integer pensionsAndAnnuitiesTaxableAmount,
+  Integer socialSecurityBenefits,
+  Integer socialSecurityTaxableAmount,
+  Integer capitalGain,
+  Integer adjustmentsToIncome,
+  Integer adjustedGrossIncome,
+  Integer standardDeductions,
+  Integer businessIncomeDeductions,
+  Integer federalTaxesPaid
+) {}
