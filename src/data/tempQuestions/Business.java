@@ -10,5 +10,6 @@ public record Business(
   @NotBlank Integer marketValue,
   @NotBlank Integer amountOwed,
   @NotBlank String taxForm,
-  @NotBlank Integer totalExpenses
+  @NotBlank Integer totalExpenses,
+  Set<FamilyBusiness> family
 ) {}

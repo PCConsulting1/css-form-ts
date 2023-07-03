@@ -2,14 +2,10 @@ import java.time.LocalDate;
 
 public record Parent(
   @Id Integer id,
-  @Id Integer schedule1_id,
-  @Id Integer schedule2_id,
-  @Id Integer schedule3_id,
-  @Id Integer tax1040_id,
-  @NotBlank String firstName, //match with Student, FamilyBusiness
-  @NotBlank String lastName, //match with Student, FamilyBusiness
+  @NotBlank String firstName, //match with Student, FamilyBusiness, Dependents
+  @NotBlank String lastName, //match with Student, FamilyBusiness, Dependents
   @NotBlank String email, //match with Student
-  @NotBlank LocalDate birthDate,  //match with Student
+  @NotBlank LocalDate birthDate,  //match with Student, Dependents
   @NotBlank String highestEducation,
   @NotBlank Integer incomeFromWork, //match with Student
   @NotBlank Integer expectedIncomeFromWork,
@@ -26,5 +22,5 @@ public record Parent(
   @NotBlank Boolean hasUnionSponsoredRetirement,
   @NotBlank Boolean hasMilitarySponsoredRetirement,
   @NotBlank Boolean hasOtherRetirement,
-  @NotBlank Integer retirementValue,
+  @NotBlank Integer retirementValue
 ) {}

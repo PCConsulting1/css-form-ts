@@ -10,12 +10,12 @@ public record Student(
   @Id Integer schedule2_id,
   @Id Integer schedule3_id,
   @Id Integer tax1040_id,
-  @NotBlank String firstName, //match with Parent, FamilyBusiness
+  @NotBlank String firstName, //match with Parent, FamilyBusiness, Dependents
   String middleName,
-  @NotBlank String lastName,  //match with Parent, FamilyBusiness
+  @NotBlank String lastName,  //match with Parent, FamilyBusiness, Dependents
   @NotBlank String phoneNumber,
   @NotBlank String email,     //match with Parent
-  @NotBlank LocalDate birthDate,  //match with Parent
+  @NotBlank LocalDate birthDate,  //match with Parent, Dependents
   @NotBlank String citizenship,
   @NotBlank String socialSecurityId,
   String cbFinAidId,
@@ -48,5 +48,6 @@ public record Student(
   @NotBlank Integer otherUntaxedSummer,
   @NotBlank Integer academicYear,
   @NotBlank Integer otherTaxedAcademicYear,
-  @NotBlank Integer otherUnaxedAcademicYear
+  @NotBlank Integer otherUnaxedAcademicYear,
+  Set<Schools> schools
   ){}

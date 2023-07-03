@@ -267,15 +267,15 @@ export const household = {
       last_name: '',
       birth_date: '',
       dependent_relationship: '',
-      next_school_level: '',
       prior_education: {
         school_level: '',
         school_name: '',
         total_cost: '',
         scholarships: '',
-        paid_by_parents: '',
+        paid_by_parents: 0,
       },
       current_education: {
+        school_level: '',
         school_name: '',
         total_cost: '',
         paid_by_parents: '',
