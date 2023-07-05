@@ -893,12 +893,12 @@ export const questions = {
       `Has your family experienced ongoing financial impact by covid?`,
   },
   hasExceptionalMedical: {
-    name: 'has_covid',
+    name: 'has_exceptional_medical',
     question: () =>
       `Has your family experienced ongoing financial impact by exceptional medical or dental expenses?`,
   },
   hasEldercare: {
-    name: 'has_exceptional_medical',
+    name: 'has_eldercare',
     question: () =>
       `Has your family experienced ongoing financial impact by eldercare or financial support of other family members?`,
   },
