@@ -80,7 +80,7 @@ export const student = {
   investments: 0,
   trust: 0,
   liquid_cash: 0,
-  retirement: 0,
+  retirement_value: 0,
   // expected income
   summer: 0,
   other_taxed_summer: 0,

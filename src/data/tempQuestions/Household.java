@@ -34,7 +34,7 @@ public record Household(
   @NotBlank Integer priorPriorExpenseMedical,
   @NotBlank Integer priorPriorExpenseCollege,
   @NotBlank Integer priorPriorExpenseAlimony,
-  @NotBlank Integer priorExpenseChildSupport,
+  @NotBlank Integer priorExpenseChildSupport, //use for untaxed income and benefits
   @NotBlank Integer priorExpenseMedical,
   @NotBlank Integer priorExpenseCollege,
   @NotBlank Integer priorExpenseAlimony,
